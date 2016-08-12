@@ -37,12 +37,12 @@ var secondPlayer = 0;
 // Set tokens (in pairs)
 var tokenOne = "X";
 var tokenTwo = "O";
-var tokenThree = '<img src="clinton1.png" style="height:175px;width:175px;marginTop:10px;">';
-var tokenFour = '<img src="trump3.png" style="height:175px;width:175px;marginTop:10px">';
-var tokenFive = '<img src ="femalemexican.jpg" style="height:175px;width:175px">';
-var tokenSix = '<img src ="MaleMexican1.png" style="height:175px;width:175px">';
-var tokenSeven = '<img src ="sun.gif" style="height:175px;width:175px">';
-var tokenEight = '<img src ="moon.gif" style="height:175px;width:175px">';
+var tokenThree = '<img src="clinton1.png" style="height:175px;width:175px;margin-top:10px;">';
+var tokenFour = '<img src="trump3.png" style="height:175px;width:175px;margin-top:10px">';
+var tokenFive = '<img src ="femalemexican.jpg" style="height:175px;width;margin-top:10px">';
+var tokenSix = '<img src ="MaleMexican1.png" style="height:175px;width:175px;margin-top:10px">';
+var tokenSeven = '<img src ="sun.gif" style="height:175px;width:175px;margin-top:10px">';
+var tokenEight = '<img src ="moon.gif" style="height:175px;width:175px;margin-top:10px">';
 
 
 //Changing tokens and background image from dropdown box.  May add change of music choice as well in future.
@@ -73,9 +73,7 @@ document.querySelector("#tokens").addEventListener("change",function() {
     startToken = tokenFive;
     endToken = tokenSix;
     document.body.style.backgroundImage = "url('Day of the Dead.jpg')";
-    // <audio src="Popcorn Original Song.mp3" autoplay="true"></audio>   - format
-    // "Dayofthedead.mp3"  - song to choose
-  }
+    }
   else if (choice ===4) {
     startToken = tokenSeven;
     endToken = tokenEight;
@@ -148,7 +146,6 @@ document.getElementById("topRow1").onclick = function() {
 turnCheck();
 board.p1 = whoseTurn;
 topRow1.innerHTML=whoseTurn;
-// console.log("square one is " + board.p1);
 gameCheck();
 if (board.p1!==null){
 document.getElementById("topRow1").disabled = true;
@@ -247,11 +244,9 @@ var gameCheck = function(){
 
 //check ROWS
 if (board.p1!==null&&board.p1===board.p2&&board.p2===board.p3) {
-  // console.log("You have three in a row.  You won!");
   rowMessage();
   if (board.p1===startToken) {
     startPlayer++;
-    // console.log("startplayerscore is " +startPlayer);
     startPlayerScore();
 
   } else {
@@ -383,7 +378,6 @@ c.innerHTML=secondPlayer;
 // MAY INTRODUCE PLAYER SELECTOR ONCE I HAVE MORE TIME (IE GO FIRST OR SECOND)
 
 var playerChoice;
-// document.querySelector("#singlePlayer").addEventListener("change",function() {
 document.getElementById("singlePlayer").onclick = function() {
   playerChoice = parseInt( this.value );
   if (count%2!==0) {
@@ -393,7 +387,6 @@ document.getElementById("singlePlayer").onclick = function() {
 
 var computer = function() {
 var boardKeys = Object.keys(board);
-// console.log(boardKeys.length);
 var newArray = [];
 
 for (var i=0; i<boardKeys.length; i++) {
@@ -449,98 +442,3 @@ board[randomChoice] = endToken;
     gameCheck();
   }
   };
-
-
-
-
-// Good to have but unnecessary as buttons disabled so can only have nine clicks
-// and logic displays win message before getting to a draw message if there is a win
-
-
-// var drawCheck = function (){
-//   for (var i in board) {
-//     if (board[i]===null) {
-//       drawMessage();
-//     }
-//   }
-// };
-
-
-//secondRow4.innerHTML =endToken;
-
-
-
-// for (var i in board) {console.log(board[i]);}
-
-
-// // return keys into an array as cannot count length of object
-// //then count length of array
-// // then iterate over the array to return the property
-// // count x or 0 then to determine which is greater and whose turn
-//
-// var countX=0;
-// var countO=0;
-// console.log(Object.keys(board));
-// var test = Object.keys(board);
-// console.log(test.length);
-//
-// //iterate for loop to return properties in Object
-//
-// for (var i in board) {
-// console.log(board[i]);
-// if (board[i]==="X") {
-//   countX++;
-//   console.log(countX);
-// } else if (board[i]==="O") {
-//   countO++;
-//   console.log(countO);
-// }}
-// if (countX>countO) {
-//   whoseTurn = "donkey";
-// }
-//
-
-// CODE OUT FOR NOW
-//create function to run within button
-// if button clicked commence function
-// for first button click, whoseTurn is "X"
-
-
-// var counter =1;
-// var whoseTurn;
-// var turnCheck = function() {
-//   if (counter%2===0) {whoseTurn = "doggie";
-// }
-//  else {whoseTurn="cattie";}
-//  };
-
-
-
-
-// needs to run as continuous loop
-
-//
-
-// start with counter = zero, on click of button then it populates p1 to p9 depending on which
-// problem with counter - base it on p1 to p9
-// var counter;
-// for (i=0; i<=9; i++) {
-//   if (i%2===0) {
-//     counter = "X";
-//   } else {
-//     counter = "nought";
-//   console.log(counter);}
-// }
-
-//
-// if (moves.includes($(this.attr("id")) {
-// // don't let them move there
-// } else if ($(this).attr("id") === lastMove) {
-//   //counter -= 1;
-//   // remove the tile from the board;
-// } else {
-//  counter += 1
-//  moves.push(lastMove)
-//  lastMove = $(this).attr("id");
-//  // place the tile on the board
-// }

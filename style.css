@@ -6,35 +6,30 @@ body {
   font-family: "Dosis";
   /*background-image: url('niceimage.gif');*/
   /*background-image: url('Day of the Dead.jpg');*/
-
   background: cover;
   background-size: cover;
-  }
+}
 
 /*<iframe src="http://giphy.com/embed/3o7qDNfxtNRtLVv8qs" width="480" height="269" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/animation-motion-graphics-background-3o7qDNfxtNRtLVv8qs">via GIPHY</a></p>*/
 
-h1{
+h1 {
   margin-top: 30px;
   margin-bottom: 0px;
 }
-
 h2 {
   margin-top: 5px;
   font-size: 20px;
   text-align: right;
   margin-right: 400px;
 }
-
 .container {
   border-color: black;
   border: 5px;
-
 }
 
 /*#topRow1, #topRow2, #topRow3, #secondRow4, #secondRow5, #secondRow6, #thirdRow7, #thirdRow8, #thirdRow9 */
 
-button[id*="Row"]
-{
+button[id*="Row"] {
   height: 200px;
   width: 200px;
   display: inline-block;
@@ -49,8 +44,6 @@ button[id*="Row"]
   overflow: hidden;
   vertical-align: bottom;
 }
-
-
 .scoreboard {
   font: 10px;
   font-family: "Dosis";
@@ -58,8 +51,6 @@ button[id*="Row"]
   text-align: right;
   margin-right: 160px;
 }
-
-
 .score1, .score2 {
   display: inline-block;
   font: 10px;
@@ -67,14 +58,12 @@ button[id*="Row"]
   margin-bottom: 0px;
   vertical-align: top;
 }
-
 .score3, .score4 {
   display: inline-block;
   margin-top: 10px;
   margin-bottom: 6px;
   vertical-align: top;
 }
-
 .score2, .score4 {
   background-color: white;
   color: lightslategray;
@@ -83,6 +72,7 @@ button[id*="Row"]
   height: 40px;
   vertical-align: top;
 }
+
 /* use wildcard selector above - ie $row perhaps */
 
 select, #reset, #resetScore, #singlePlayer {

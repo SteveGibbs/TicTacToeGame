@@ -40,7 +40,7 @@ var tokenTwo = "O";
 var tokenThree = '<img src="clinton1.png" style="height:175px;width:175px;marginTop:10px;">';
 var tokenFour = '<img src="trump3.png" style="height:175px;width:175px;marginTop:10px">';
 var tokenFive = '<img src ="femalemexican.jpg" style="height:175px;width:175px">';
-var tokenSix = '<img src ="malemexican1.png" style="height:175px;width:175px">';
+var tokenSix = '<img src ="MaleMexican1.png" style="height:175px;width:175px">';
 var tokenSeven = '<img src ="sun.gif" style="height:175px;width:175px">';
 var tokenEight = '<img src ="moon.gif" style="height:175px;width:175px">';
 

@@ -36,7 +36,7 @@ Project Zero of General Assembly's Web Development Immersive course (3mths durat
 ## Issues / Bugs
 
 - Can select different tokens midway through game but this functionality is intentional.  I intend to build in logic so that you can remember the different tokens and match them (all first player vs second player) as a variant.
-- Game allows you to continue after win if you do not select reset.  This will be fixed at a later point.  Buttons will be disabled after win message occurs.  
+- Game allows you to continue after win if you do not select reset.  This will be fixed at a later point.  Buttons will, in future, be disabled after win message occurs.  
 
 ## Backlog / Futures Releases
 

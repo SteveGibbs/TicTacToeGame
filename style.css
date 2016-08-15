@@ -22,7 +22,7 @@ h2 {
   border: 5px;
 }
 
-button[id*="Row"] {
+button[id*="cell"] {
   height: 200px;
   width: 200px;
   display: inline-block;

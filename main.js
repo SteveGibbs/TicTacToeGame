@@ -114,27 +114,15 @@ document.getElementById("resetScore").onclick = function() {
   c.innerHTML = secondPlayer;
 };
 
+
 // Put token into board on button click.  Select element by id, token is equal to
 // whoseTurn once the turncheck has run to determine which order.  Check is game is won or not
 // or a draw or else continue.  Disable button once token has been parsed through into object
 
-
-//UNDER DEVELOPMENT
-
 for (var j = 1; j <= 9; j++) {
   var keyPrefix0 = ("p" + j);
   var elementPrefix0 = ("cell" + j);
-  //
-  // document.getElementById(elementPrefix0).onclick = function() {
-  //   turnCheck();
-  //   board[keyPrefix0] = whoseTurn;
-  //   this.innerHTML = whoseTurn;
-  //   gameCheck();
-  //   console.log(keyPrefix0);
-  //   if (board[keyPrefix0] !== null) {
-  //     this.disabled = true;
-  //   }
-  // };
+
 
   var attachEventHandler = function(keyPrefix, elementPrefix) { //needed to trap variable value otherwise it just iterates to value at end of for loop
     document.getElementById(elementPrefix).onclick = function() {
@@ -151,97 +139,6 @@ for (var j = 1; j <= 9; j++) {
   attachEventHandler(keyPrefix0, elementPrefix0);
 }
 
-// document.getElementById("cell1").onclick = function() {
-//   turnCheck();
-//   board.p1 = whoseTurn;
-//   cell1.innerHTML = whoseTurn;
-//   gameCheck();
-//   if (board.p1 !== null) {
-//     document.getElementById("cell1").disabled = true;
-//   }
-// };
-//
-// document.getElementById("cell2").onclick = function() {
-//   turnCheck();
-//   board.p2 = whoseTurn;
-//   cell2.innerHTML = whoseTurn;
-//   gameCheck();
-//   if (board.p2 !== null) {
-//     document.getElementById("cell2").disabled = true;
-//   }
-// };
-//
-// document.getElementById("cell3").onclick = function() {
-//   turnCheck();
-//   board.p3 = whoseTurn;
-//   cell3.innerHTML = whoseTurn;
-//   gameCheck();
-//   if (board.p3 !== null) {
-//     document.getElementById("cell3").disabled = true;
-//   }
-// };
-//
-// document.getElementById("cell4").onclick = function() {
-//   turnCheck();
-//   board.p4 = whoseTurn;
-//   cell4.innerHTML = whoseTurn;
-//   gameCheck();
-//   if (board.p4 !== null) {
-//     document.getElementById("cell4").disabled = true;
-//   }
-// };
-//
-// document.getElementById("cell5").onclick = function() {
-//   turnCheck();
-//   board.p5 = whoseTurn;
-//   cell5.innerHTML = whoseTurn;
-//   gameCheck();
-//   if (board.p5 !== null) {
-//     document.getElementById("cell5").disabled = true;
-//   }
-// };
-//
-// document.getElementById("cell6").onclick = function() {
-//   turnCheck();
-//   board.p6 = whoseTurn;
-//   cell6.innerHTML = whoseTurn;
-//   gameCheck();
-//   if (board.p6 !== null) {
-//     document.getElementById("cell6").disabled = true;
-//   }
-// };
-//
-// document.getElementById("cell7").onclick = function() {
-//   turnCheck();
-//   board.p7 = whoseTurn;
-//   cell7.innerHTML = whoseTurn;
-//   gameCheck();
-//   if (board.p7 !== null) {
-//     document.getElementById("cell7").disabled = true;
-//   }
-// };
-//
-// document.getElementById("cell8").onclick = function() {
-//   turnCheck();
-//   board.p8 = whoseTurn;
-//   cell8.innerHTML = whoseTurn;
-//   gameCheck();
-//   if (board.p8 !== null) {
-//     document.getElementById("cell8").disabled = true;
-//   }
-// };
-//
-//
-// document.getElementById("cell9").onclick = function() {
-//   turnCheck();
-//   board.p9 = whoseTurn;
-//   cell9.innerHTML = whoseTurn;
-//   gameCheck();
-//   if (board.p9 !== null) {
-//     document.getElementById("cell9").disabled = true;
-//   }
-//
-// };
 
 
 // Game checker functionality -

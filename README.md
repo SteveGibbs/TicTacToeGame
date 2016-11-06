@@ -1,6 +1,10 @@
 # TicTacToe Game
+[Click here to see live Project](https://stevegibbs.github.io/TicTacToeGame/)
 
 Project Zero of General Assembly's Web Development Immersive course (3mths duration). Code was intentionally written long hand in javascript to better built my fundamentals and syntax of that language and I purposefully avoided jQuery. My intention is to recode this project at a later time to reduce most of the redundancy in the code and use jQuery to built up my knowledge of its syntax.
+
+## Designed by
+[Steve Gibbs](https://github.com/SteveGibbs)
 
 ## Features
 

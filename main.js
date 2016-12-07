@@ -78,9 +78,7 @@ document.querySelector("#tokens").addEventListener("change", function() {
   }
 });
 
-
 // Turn checker - if one token is selected, the other token must be played next
-
 var turnCheck = function() {
   count++;
   console.log("times pressed equals " + count);
@@ -88,7 +86,6 @@ var turnCheck = function() {
     whoseTurn = endToken;
   } else whoseTurn = startToken;
 };
-
 
 // Reset functionality - put all properties back to original state at board commencement
 document.getElementById("reset").onclick = function() {
@@ -139,39 +136,18 @@ for (var j = 1; j <= 9; j++) {
   attachEventHandler(keyPrefix0, elementPrefix0);
 }
 
-
-
 // Game checker functionality -
 // check rows then columns then diagonals - use threequals and && for or
 // need first condition does not equal null as each p starts as a null otherwise
 // they all equal each other
 
+
 var gameCheck = function() {
-
   //check ROWS
-  if (board.p1 !== null && board.p1 === board.p2 && board.p2 === board.p3) {
+  if ((board.p1 !== null && board.p1 === board.p2 && board.p2 === board.p3)||(board.p4 !== null && board.p4 === board.p5 && board.p5 === board.p6)||(board.p7 !== null && board.p7 === board.p8 && board.p8 === board.p9))
+   {
     rowMessage();
-    if (board.p1 === startToken) {
-      startPlayer++;
-      startPlayerScore();
-
-    } else {
-      secondPlayer++;
-      secondPlayerScore();
-    }
-
-  } else if (board.p4 !== null && board.p4 === board.p5 && board.p5 === board.p6) {
-    rowMessage();
-    if (board.p4 === startToken) {
-      startPlayer++;
-      startPlayerScore();
-    } else {
-      secondPlayer++;
-      secondPlayerScore();
-    }
-  } else if (board.p7 !== null && board.p7 === board.p8 && board.p8 === board.p9) {
-    rowMessage();
-    if (board.p7 === startToken) {
+    if ((board.p1 === startToken)||(board.p4 === startToken)||(board.p7 === startToken)) {
       startPlayer++;
       startPlayerScore();
     } else {
@@ -180,29 +156,9 @@ var gameCheck = function() {
     }
   }
   // check COLUMNS
-  else if (board.p1 !== null && board.p1 === board.p4 && board.p4 === board.p7) {
+  else if ((board.p1 !== null && board.p1 === board.p4 && board.p4 === board.p7)||(board.p2 !== null && board.p2 === board.p5 && board.p5 === board.p8)||(board.p3 !== null && board.p3 === board.p6 && board.p6 === board.p9)) {
     columnMessage();
-    if (board.p1 === startToken) {
-      startPlayer++;
-      startPlayerScore();
-    } else {
-      secondPlayer++;
-      secondPlayerScore();
-    }
-
-
-  } else if (board.p2 !== null && board.p2 === board.p5 && board.p5 === board.p8) {
-    columnMessage();
-    if (board.p2 === startToken) {
-      startPlayer++;
-      startPlayerScore();
-    } else {
-      secondPlayer++;
-      secondPlayerScore();
-    }
-  } else if (board.p3 !== null && board.p3 === board.p6 && board.p6 === board.p9) {
-    columnMessage();
-    if (board.p3 === startToken) {
+    if ((board.p1 === startToken)||(board.p2 === startToken)||(board.p3 === startToken)) {
       startPlayer++;
       startPlayerScore();
     } else {
@@ -210,20 +166,10 @@ var gameCheck = function() {
       secondPlayerScore();
     }
   }
-
   // CHECK DIAGONALS
-  else if (board.p1 !== null & board.p1 === board.p5 && board.p5 === board.p9) {
+  else if ((board.p1 !== null & board.p1 === board.p5 && board.p5 === board.p9)||(board.p3 !== null & board.p3 === board.p5 && board.p5 === board.p7)) {
     diagonalMessage();
-    if (board.p1 === startToken) {
-      startPlayer++;
-      startPlayerScore();
-    } else {
-      secondPlayer++;
-      secondPlayerScore();
-    }
-  } else if (board.p3 !== null & board.p3 === board.p5 && board.p5 === board.p7) {
-    diagonalMessage();
-    if (board.p3 === startToken) {
+    if ((board.p1 === startToken)||(board.p3=== startToken)) {
       startPlayer++;
       startPlayerScore();
     } else {
@@ -238,6 +184,7 @@ var gameCheck = function() {
     console.log("game is still on");
   }
 };
+
 
 // MESSAGES FOR ROW WIN, COLUMN WIN, DIAGONAL WIN OR DRAW
 rowMessage = function() {

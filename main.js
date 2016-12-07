@@ -100,6 +100,21 @@ document.getElementById("reset").onclick = function() {
   $("p1").remove(); // removes all messages on reset
 };
 
+
+// Disable all buttons on win
+var winDisable = function (){
+  for (i=1; i<=9; i++){
+    var elementPrefixTwo = ("cell" + i);
+    document.getElementById(elementPrefixTwo).disabled = true;
+  }
+};
+
+//Mute music
+document.getElementById("soundButton").onclick = function(){
+  var audioA = document.getElementById("music");
+  audioA.muted = !audioA.muted;
+};
+
 // Reset Score functionality
 
 document.getElementById("resetScore").onclick = function() {
@@ -147,6 +162,7 @@ var gameCheck = function() {
   if ((board.p1 !== null && board.p1 === board.p2 && board.p2 === board.p3)||(board.p4 !== null && board.p4 === board.p5 && board.p5 === board.p6)||(board.p7 !== null && board.p7 === board.p8 && board.p8 === board.p9))
    {
     rowMessage();
+    winDisable();
     if ((board.p1 === startToken)||(board.p4 === startToken)||(board.p7 === startToken)) {
       startPlayer++;
       startPlayerScore();
@@ -158,6 +174,7 @@ var gameCheck = function() {
   // check COLUMNS
   else if ((board.p1 !== null && board.p1 === board.p4 && board.p4 === board.p7)||(board.p2 !== null && board.p2 === board.p5 && board.p5 === board.p8)||(board.p3 !== null && board.p3 === board.p6 && board.p6 === board.p9)) {
     columnMessage();
+    winDisable();
     if ((board.p1 === startToken)||(board.p2 === startToken)||(board.p3 === startToken)) {
       startPlayer++;
       startPlayerScore();
@@ -169,6 +186,7 @@ var gameCheck = function() {
   // CHECK DIAGONALS
   else if ((board.p1 !== null & board.p1 === board.p5 && board.p5 === board.p9)||(board.p3 !== null & board.p3 === board.p5 && board.p5 === board.p7)) {
     diagonalMessage();
+    winDisable();
     if ((board.p1 === startToken)||(board.p3=== startToken)) {
       startPlayer++;
       startPlayerScore();

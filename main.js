@@ -37,12 +37,12 @@ var secondPlayer = 0;
 // Set tokens (in pairs)
 var tokenOne = "X";
 var tokenTwo = "O";
-var tokenThree = '<img src="clinton1.png" style="height:175px;width:175px;margin-top:10px;">';
-var tokenFour = '<img src="trump3.png" style="height:175px;width:175px;margin-top:10px">';
-var tokenFive = '<img src ="femalemexican.jpg" style="height:175px;width;margin-top:10px">';
-var tokenSix = '<img src ="MaleMexican1.png" style="height:175px;width:175px;margin-top:10px">';
-var tokenSeven = '<img src ="sun.gif" style="height:175px;width:175px;margin-top:10px">';
-var tokenEight = '<img src ="moon.gif" style="height:175px;width:175px;margin-top:10px">';
+var tokenThree = '<img src="./images/clinton1.png">';
+var tokenFour = '<img src="./images/trump3.png">';
+var tokenFive = '<img src ="./images/femalemexican.jpg">';
+var tokenSix = '<img src ="./images/MaleMexican1.png">';
+var tokenSeven = '<img src ="./images/sun.gif">';
+var tokenEight = '<img src ="./images/moon.gif">';
 
 
 //Changing tokens and background image from dropdown box.  May add change of music choice as well in future.
@@ -66,15 +66,15 @@ document.querySelector("#tokens").addEventListener("change", function() {
   } else if (choice === 2) {
     startToken = tokenThree;
     endToken = tokenFour;
-    document.body.style.backgroundImage = "url('americanflag.gif')";
+    document.body.style.backgroundImage = "url('./images/americanflag.gif')";
   } else if (choice === 3) {
     startToken = tokenFive;
     endToken = tokenSix;
-    document.body.style.backgroundImage = "url('Day of the Dead.jpg')";
+    document.body.style.backgroundImage = "url('./images/Day of the Dead.jpg')";
   } else if (choice === 4) {
     startToken = tokenSeven;
     endToken = tokenEight;
-    document.body.style.backgroundImage = "url('niceimage.gif')";
+    document.body.style.backgroundImage = "url('./images/niceimage.gif')";
   }
 });
 
@@ -107,10 +107,10 @@ document.getElementById("reset").onclick = function() {
 
 document.getElementById("resetScore").onclick = function() {
   startPlayer = null;
-  var b = document.querySelector(".score2");
+  var b = document.querySelector(".score-start");
   b.innerHTML = startPlayer;
   secondPlayer = null;
-  var c = document.querySelector(".score4");
+  var c = document.querySelector(".score-second");
   c.innerHTML = secondPlayer;
 };
 
@@ -269,12 +269,12 @@ drawMessage = function() {
 };
 
 startPlayerScore = function() {
-  var b = document.querySelector(".score2");
+  var b = document.querySelector(".score-start");
   b.innerHTML = startPlayer;
 };
 
 secondPlayerScore = function() {
-  var c = document.querySelector(".score4");
+  var c = document.querySelector(".score-second");
   c.innerHTML = secondPlayer;
 };
 

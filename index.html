@@ -12,33 +12,42 @@
 </head>
 
 <body>
-  <div class="f3">
-    <button id="reset">Reset Game</button>
-    <button id="resetScore">Reset Score</button>
-  </div>
-  <br>
-  <button id="singlePlayer">Easy - Click to Play Computer</button>
-
-  <select id="tokens">
-    <option value="1">Classic</option>
-    <option value="2">Presidential</option>
-    <option value="3">Day of the Dead</option>
-    <option value="4">Space</option>
-  </select>
+  <ul>
+    <li>
+      <select id="tokens">
+        <option value="1">Classic</option>
+        <option value="2">Presidential</option>
+        <option value="3">Day of the Dead</option>
+        <option value="4">Space</option>
+      </select>
+    </li>
+    <li>
+      <button id="singlePlayer">Easy - Click to Play Computer</button>
+    </li>
+    </ul>
+<ul>
+    <li>
+      <button id="reset">Reset Game</button>
+    </li>
+    <li>
+      <button id="resetScore">Reset Score</button>
+    </li>
+  </ul>
 
   <h1>Tic Tac Toe</h1>
   <h2>by Stephen Gibbs</h2>
-
-  <div class="scoreboard">
-    <div class="f1">
-      <p class="score1">Start Player</p>
-      <p class="score2"></p>
-    </div>
-    <div class="f2">
-      <p class="score3">Second Player</p>
-      <p class="score4"></p>
-    </div>
-  </div>
+  <ul>
+    <li>
+      <p class="score-title-start">Start Player</p>
+      <p class="score-start"></p>
+    </li>
+    <li>
+      <p class="score-title-second">Second Player</p>
+      <p class="score-second"></p>
+    </li>
+  </ul>
+<br>
+<p></p>
   <div class="container">
     <div class="firstRow">
       <button id="cell1"></button>
@@ -55,7 +64,7 @@
       <button id="cell8"></button>
       <button id="cell9"></button>
     </div>
-
+<br>
   </div>
   <audio src="Dayofthedead.mp3" autoplay="true"></audio>
 

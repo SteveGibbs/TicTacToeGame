@@ -6,7 +6,6 @@ body {
   font-family: "Dosis";
   background-size: cover;
 }
-
 h1 {
   margin-top: 30px;
   margin-bottom: 0px;
@@ -15,13 +14,17 @@ h2 {
   margin-top: 5px;
   font-size: 20px;
   text-align: right;
-  margin-right: 400px;
+  margin-right: 35%;
 }
 .container {
   border-color: black;
   border: 5px;
 }
-
+li {
+  list-style-type: none;
+  display: inline-block;
+  margin: 0 auto;
+}
 button[id*="cell"] {
   height: 200px;
   width: 200px;
@@ -36,38 +39,89 @@ button[id*="cell"] {
   overflow: hidden;
   vertical-align: bottom;
 }
+img {
+  margin-top: 10px;
+  height: 175px;
+  width: 175px;
+}
 .scoreboard {
   line-height: 30px;
   text-align: right;
   margin-right: 160px;
 }
-.score1, .score2 {
+.score-title-start, .score-start {
   display: inline-block;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  vertical-align: top;
+  vertical-align: middle;
+  margin-right: 10px;
 }
-.score3, .score4 {
+.score-title-second, .score-second {
   display: inline-block;
-  margin-top: 10px;
-  margin-bottom: 6px;
-  vertical-align: top;
+  vertical-align: middle;
 }
-
-.score2, .score4 {
+.score-start, .score-second {
   background-color: white;
   color: lightslategray;
   text-align: center;
-  width: 70px;
+  width: 60px;
   height: 40px;
-  vertical-align: top;
+  border-radius: 5px;
+  vertical-align: middle;
 }
-
+ul {
+  height: 20px;
+}
 select, #reset, #resetScore, #singlePlayer {
-  margin-right: 50px;
-  font: 10px;
-  float: right;
+  margin: 0 auto;
+  font-size: 18px;
+  border-radius: 5px;
+  height: auto;
   background-color: lightslategray;
   font-family: "Dosis";
   display: inline-block;
+}
+
+@media only screen and (max-width: 736px) {
+  body {
+    font-size: 22px;
+  }
+
+  h1 {
+    margin-top: 15px;
+    font-size: 30px;
+    text-align: center;
+  }
+  h2, .score-title-start, .score-title-second {
+    font-size: 16px;
+    vertical-align: middle;
+    text-align: center;
+    margin: 0 auto;
+    height: auto;
+  }
+  .score-start, .score-second {
+    width: 25px;
+    border-radius: 20px;
+    vertical-align: middle;
+    text-align: center;
+  }
+  button[id*="cell"] {
+    height: 90px;
+    width: 90px;
+  }
+  li {
+    display: inline-block;
+    margin: 0 auto;
+    height: auto;
+  }
+  img {
+    margin: 0 auto !important;
+    height: 88px !important;
+    width: 88px !important;
+  }
+  select, #reset, #resetScore, #singlePlayer {
+    margin: 0 auto;
+    font-size: 12px;
+  }
+  ul {
+    height: 10px;
+  }
 }

@@ -110,11 +110,15 @@ var winDisable = function (){
 };
 
 //Mute music
+// document.getElementById("soundButton").onclick = function(){
+//   var audioA = document.getElementById("music");
+//   audioA.muted = !audioA.muted;
+// };
 document.getElementById("soundButton").onclick = function(){
-  var audioA = document.getElementById("music");
-  audioA.muted = !audioA.muted;
+  var audioNoise = document.getElementById("music");
+  audioNoise.muted = !audioNoise.muted;
+  $(this).find('i').toggleClass('fa fa-volume-up fa fa-volume-off');
 };
-
 // Reset Score functionality
 
 document.getElementById("resetScore").onclick = function() {

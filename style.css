@@ -25,6 +25,7 @@ li {
   display: inline-block;
   margin: 0 auto;
 }
+
 button[id*="cell"] {
   height: 200px;
   width: 200px;

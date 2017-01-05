@@ -128,3 +128,16 @@ select, #reset, #resetScore, #singlePlayer {
     height: 10px;
   }
 }
+
+@media only screen and (max-width: 320px) {
+h1 {
+  margin-top: 40px;
+}
+h2 {
+  margin-bottom: 10px;
+}
+.score-title-start, .score-title-second, .score-start, .score-second {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+}

@@ -145,6 +145,7 @@ for (var j = 1; j <= 9; j++) {
       turnCheck();
       board[keyPrefix] = whoseTurn;
       this.innerHTML = whoseTurn;
+      document.getElementById('ping').play();
       gameCheck();
       if (board[keyPrefix] !== null) {
         this.disabled = true;

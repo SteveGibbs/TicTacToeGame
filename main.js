@@ -215,6 +215,7 @@ rowMessage = function() {
   var textRowMessage = document.createTextNode("Winner - three in a row!"); // Create a text node
   createRowMessage.appendChild(textRowMessage); // Append the text to <p>
   document.body.appendChild(createRowMessage);
+  document.getElementById('winningCheer').play();
 };
 
 columnMessage = function() {
@@ -222,6 +223,7 @@ columnMessage = function() {
   var textColumnMessage = document.createTextNode("Winner - three in a column!"); // Create a text node
   createColumnMessage.appendChild(textColumnMessage); // Append the text to <p>
   document.body.appendChild(createColumnMessage);
+  document.getElementById('winningCheer').play();
 };
 
 diagonalMessage = function() {
@@ -229,6 +231,7 @@ diagonalMessage = function() {
   var textDiagonalMessage = document.createTextNode("Winner - three diagonally!"); // Create a text node
   createDiagonalMessage.appendChild(textDiagonalMessage); // Append the text to <p>
   document.body.appendChild(createDiagonalMessage);
+  document.getElementById('winningCheer').play();
 };
 
 drawMessage = function() {

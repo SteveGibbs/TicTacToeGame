@@ -50,4 +50,4 @@ Project Zero of General Assembly's Web Development Immersive course (3mths durat
 
 ## Acknowledgments
 
-- I would like to acknowledge the creators of the images and gifs used and of the music audio.  The project is not for commercial use and is solely an educational coding exercise.  
+- I would like to acknowledge the creators of the images and gifs used and of the music audios (including Jett Rifkin).  The project is not for commercial use and is solely an educational coding exercise.  

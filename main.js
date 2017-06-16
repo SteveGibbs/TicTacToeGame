@@ -27,7 +27,6 @@ var board = {
   p7: null,
   p8: null,
   p9: null
-
 };
 
 //Variables for scorecard
@@ -35,45 +34,41 @@ var startPlayer = 0;
 var secondPlayer = 0;
 
 // Set tokens (in pairs)
-var tokenOne = "X";
-var tokenTwo = "O";
-var tokenThree = '<img src="./images/clinton1.png">';
-var tokenFour = '<img src="./images/trump3.png">';
-var tokenFive = '<img src ="./images/femalemexican.jpg">';
-var tokenSix = '<img src ="./images/MaleMexican1.png">';
-var tokenSeven = '<img src ="./images/sun.gif">';
-var tokenEight = '<img src ="./images/moon.gif">';
-
+var imageOne = "X";
+var imageTwo = "O";
+var imageThree = '<img src="./images/clinton1.png">';
+var imageFour = '<img src="./images/trump3.png">';
+var imageFive = '<img src ="./images/femalemexican.jpg">';
+var imageSix = '<img src ="./images/MaleMexican1.png">';
+var imageSeven = '<img src ="./images/sun.gif">';
+var imageEight = '<img src ="./images/moon.gif">';
 
 //Changing tokens and background image from dropdown box.  May add change of music choice as well in future.
-
 var count = 0;
 var whoseTurn;
-var startToken = tokenOne;
-var endToken = tokenTwo;
+var startToken = imageOne;
+var endToken = imageTwo;
 var choice = 1;
 
 document.querySelector("#tokens").addEventListener("change", function() {
   choice = parseInt(this.value);
-
   console.log("token change choice is number " + choice + " from dropdown menu");
-
   document.querySelector("#tokens");
   if (choice === 1) {
-    startToken = tokenOne;
-    endToken = tokenTwo;
+    startToken = imageOne;
+    endToken = imageTwo;
     document.body.style.background = "#BDB48E";
   } else if (choice === 2) {
-    startToken = tokenThree;
-    endToken = tokenFour;
+    startToken = imageThree;
+    endToken = imageFour;
     document.body.style.backgroundImage = "url('./images/americanflag.gif')";
   } else if (choice === 3) {
-    startToken = tokenFive;
-    endToken = tokenSix;
+    startToken = imageFive;
+    endToken = imageSix;
     document.body.style.backgroundImage = "url('./images/Day of the Dead.jpg')";
   } else if (choice === 4) {
-    startToken = tokenSeven;
-    endToken = tokenEight;
+    startToken = imageSeven;
+    endToken = imageEight;
     document.body.style.backgroundImage = "url('./images/niceimage.gif')";
   }
 });
@@ -88,7 +83,7 @@ var turnCheck = function() {
 };
 
 // Reset functionality - put all properties back to original state at board commencement
-document.getElementById("reset").onclick = function() {
+$("#reset").click(function() {
   for (i = 1; i <= 9; i++) {
     board["p" + i] = null; //sets keys back to null via for loop
     var elementPrefix = ("cell" + i); //iterates over id name but is a just a string not an element
@@ -98,7 +93,7 @@ document.getElementById("reset").onclick = function() {
   count = 0;
   whoseTurn = null;
   $("p1").remove(); // removes all messages on reset
-};
+});
 
 
 // Disable all buttons on win
@@ -114,22 +109,19 @@ var winDisable = function (){
 //   var audioA = document.getElementById("music");
 //   audioA.muted = !audioA.muted;
 // };
-document.getElementById("soundButton").onclick = function(){
+$("#soundButton").click(function(){
   var audioNoise = document.getElementById("music");
   audioNoise.muted = !audioNoise.muted;
   $(this).find('i').toggleClass('fa fa-volume-up fa fa-volume-off');
-};
+});
+
 // Reset Score functionality
-
-document.getElementById("resetScore").onclick = function() {
+$("#resetScore").click(function(){
+  $("#score-one").html(null);
+  $("#score-two").html(null);
   startPlayer = null;
-  var b = document.querySelector(".score-start");
-  b.innerHTML = startPlayer;
   secondPlayer = null;
-  var c = document.querySelector(".score-second");
-  c.innerHTML = secondPlayer;
-};
-
+});
 
 // Put token into board on button click.  Select element by id, token is equal to
 // whoseTurn once the turncheck has run to determine which order.  Check is game is won or not
@@ -152,7 +144,6 @@ for (var j = 1; j <= 9; j++) {
       }
     };
   };
-
   attachEventHandler(keyPrefix0, elementPrefix0);
 }
 
@@ -208,7 +199,6 @@ var gameCheck = function() {
   }
 };
 
-
 // MESSAGES FOR ROW WIN, COLUMN WIN, DIAGONAL WIN OR DRAW
 rowMessage = function() {
   var createRowMessage = document.createElement("p1"); // Create a <p> node
@@ -242,12 +232,12 @@ drawMessage = function() {
 };
 
 startPlayerScore = function() {
-  var b = document.querySelector(".score-start");
+  var b = document.querySelector("#score-one");
   b.innerHTML = startPlayer;
 };
 
 secondPlayerScore = function() {
-  var c = document.querySelector(".score-second");
+  var c = document.querySelector("#score-two");
   c.innerHTML = secondPlayer;
 };
 

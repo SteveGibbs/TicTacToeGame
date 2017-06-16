@@ -1,29 +1,26 @@
 body {
   background: #BDB48E;
+  font-family: "Dosis";
+  font-size: 30px;
   text-align: center;
   color: white;
-  font-size: 30px;
-  font-family: "Dosis";
   background-size: cover;
 }
+
 h1 {
-  margin-top: 5px;
-  margin-bottom: 0px;
+  margin: 0;
 }
-h2 {
-  margin-top: 5px;
-  font-size: 20px;
-  text-align: right;
-  margin-right: 35%;
+
+ul {
+  height: 5px;
+  padding: 16px;
+  margin: 0;
 }
-.container {
-  border-color: black;
-  border: 5px;
-}
+
 li {
+  margin-top: -20px;
   list-style-type: none;
   display: inline-block;
-  margin: 0 auto;
 }
 
 button[id*="cell"] {
@@ -40,38 +37,32 @@ button[id*="cell"] {
   overflow: hidden;
   vertical-align: bottom;
 }
+
 img {
   margin-top: 10px;
   height: 175px;
   width: 175px;
 }
-.scoreboard {
-  line-height: 30px;
-  text-align: right;
-  margin-right: 160px;
-}
-.score-title-start, .score-start {
+
+.score-title {
   display: inline-block;
   vertical-align: middle;
   margin-right: 10px;
 }
-.score-title-second, .score-second {
-  display: inline-block;
-  vertical-align: middle;
-}
-.score-start, .score-second {
-  background-color: white;
-  color: lightslategray;
-  text-align: center;
+
+.score-block {
   width: 60px;
   height: 40px;
   border-radius: 5px;
+  background-color: white;
+  color: lightslategray;
+  text-align: center;
+  display: inline-block;
   vertical-align: middle;
+  margin-right: 10px;
 }
-ul {
-  height: 20px;
-}
-select, #reset, #resetScore, #singlePlayer {
+
+.button_top, #tokens {
   margin: 0 auto;
   font-size: 18px;
   border-radius: 5px;
@@ -84,71 +75,49 @@ select, #reset, #resetScore, #singlePlayer {
 @media only screen and (max-width: 736px) {
   body {
     font-size: 22px;
-    text-align: center;
   }
 
   h1 {
     margin-top: 20px;
     font-size: 30px;
-    text-align: center;
+    }
+
+  ul {
+    height: 5px;
+    padding: 8px;
+    margin: 0;
   }
-  h2, .score-title-start, .score-title-second {
+
+  .score-title {
     font-size: 16px;
-    vertical-align: middle;
-    text-align: center;
-    margin: 0 auto;
-    height: auto;
   }
-  .score-start, .score-second {
+
+  .score-block {
     width: 25px;
     border-radius: 20px;
-    vertical-align: middle;
-    text-align: center;
   }
+
   button[id*="cell"] {
     height: 90px;
     width: 90px;
   }
-  ul, li {
-    display: inline-block;
-    margin: 0 auto;
-    height: auto;
-    text-align: center;
-  }
+
   img {
     margin: 0 auto !important;
     height: 88px !important;
     width: 88px !important;
   }
-  select, #reset, #resetScore, #singlePlayer {
+
+  .button_top, #tokens {
     margin: 0 auto;
     font-size: 12px;
   }
-  ul {
-    height: 10px;
-  }
 }
 
 /*Fix for display on iphone 4*/
+
 @media only screen and (max-width: 568px) {
-.firstRow {
-  margin-top: 50px;
-}
-}
-
-/*Fix for display on iphone 4*/
-@media only screen and (max-width: 320px) {
-h1 {
-  margin-top: 45px;
-}
-h2 {
-  margin-bottom: 10px;
-}
-.score-title-start, .score-title-second, .score-start, .score-second {
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-.firstRow {
-  margin-top: 50px;
-}
+  .firstRow {
+    margin-top: 35px;
+  }
 }

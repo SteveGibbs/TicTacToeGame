@@ -159,7 +159,9 @@ var gameCheck = function() {
    {
     rowMessage();
     winDisable();
-    if ((board.p1 === startToken)||(board.p4 === startToken)||(board.p7 === startToken)) {
+    //if ((board.p1 === startToken)||(board.p4 === startToken)||(board.p7 === startToken))
+    if(count % 2 !== 0)
+     {
       startPlayer++;
       startPlayerScore();
     } else {
@@ -171,7 +173,7 @@ var gameCheck = function() {
   else if ((board.p1 !== null && board.p1 === board.p4 && board.p4 === board.p7)||(board.p2 !== null && board.p2 === board.p5 && board.p5 === board.p8)||(board.p3 !== null && board.p3 === board.p6 && board.p6 === board.p9)) {
     columnMessage();
     winDisable();
-    if ((board.p1 === startToken)||(board.p2 === startToken)||(board.p3 === startToken)) {
+    if (count % 2 !== 0) {
       startPlayer++;
       startPlayerScore();
     } else {
@@ -183,7 +185,7 @@ var gameCheck = function() {
   else if ((board.p1 !== null & board.p1 === board.p5 && board.p5 === board.p9)||(board.p3 !== null & board.p3 === board.p5 && board.p5 === board.p7)) {
     diagonalMessage();
     winDisable();
-    if ((board.p1 === startToken)||(board.p3=== startToken)) {
+    if (count % 2 !== 0) {
       startPlayer++;
       startPlayerScore();
     } else {

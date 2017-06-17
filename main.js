@@ -92,6 +92,7 @@ $("#reset").click(function() {
   }
   count = 0;
   whoseTurn = null;
+  $("#message").text(null);
   $("p1").remove(); // removes all messages on reset
 });
 
@@ -119,6 +120,7 @@ $("#soundButton").click(function(){
 $("#resetScore").click(function(){
   $("#score-one").html(null);
   $("#score-two").html(null);
+  $("#message").text(null);
   startPlayer = null;
   secondPlayer = null;
 });
@@ -157,6 +159,7 @@ var gameCheck = function() {
   //check ROWS
   if ((board.p1 !== null && board.p1 === board.p2 && board.p2 === board.p3)||(board.p4 !== null && board.p4 === board.p5 && board.p5 === board.p6)||(board.p7 !== null && board.p7 === board.p8 && board.p8 === board.p9))
    {
+    displayMessage();
     rowMessage();
     winDisable();
     //if ((board.p1 === startToken)||(board.p4 === startToken)||(board.p7 === startToken))
@@ -171,6 +174,7 @@ var gameCheck = function() {
   }
   // check COLUMNS
   else if ((board.p1 !== null && board.p1 === board.p4 && board.p4 === board.p7)||(board.p2 !== null && board.p2 === board.p5 && board.p5 === board.p8)||(board.p3 !== null && board.p3 === board.p6 && board.p6 === board.p9)) {
+    displayMessage();
     columnMessage();
     winDisable();
     if (count % 2 !== 0) {
@@ -183,6 +187,7 @@ var gameCheck = function() {
   }
   // CHECK DIAGONALS
   else if ((board.p1 !== null & board.p1 === board.p5 && board.p5 === board.p9)||(board.p3 !== null & board.p3 === board.p5 && board.p5 === board.p7)) {
+    displayMessage();
     diagonalMessage();
     winDisable();
     if (count % 2 !== 0) {
@@ -195,11 +200,32 @@ var gameCheck = function() {
   }
   //CHECK DRAW OR CONTINUE
   else if (count === 9) {
+    displayMessage();
     drawMessage();
   } else {
     console.log("game is still on");
   }
 };
+
+
+var s = 0;
+var message;
+
+
+displayMessage = function(){
+  if((board.p1 !== null && board.p1 === board.p2 && board.p2 === board.p3)||(board.p4 !== null && board.p4 === board.p5 && board.p5 === board.p6)||(board.p7 !== null && board.p7 === board.p8 && board.p8 === board.p9)){
+    message = "Winner - three in a row!";
+  } else if ((board.p1 !== null && board.p1 === board.p4 && board.p4 === board.p7)||(board.p2 !== null && board.p2 === board.p5 && board.p5 === board.p8)||(board.p3 !== null && board.p3 === board.p6 && board.p6 === board.p9)) {
+    message = "Winner - three in a column!";
+  } else if ((board.p1 !== null & board.p1 === board.p5 && board.p5 === board.p9)||(board.p3 !== null & board.p3 === board.p5 && board.p5 === board.p7)) {
+    message = "Winner - three diagonally!";
+  }
+  else {
+    message = null;
+  }
+  $("#message").text(message);
+};
+
 
 // MESSAGES FOR ROW WIN, COLUMN WIN, DIAGONAL WIN OR DRAW
 rowMessage = function() {

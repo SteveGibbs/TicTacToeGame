@@ -73,6 +73,22 @@ document.querySelector("#tokens").addEventListener("change", function() {
   }
 });
 
+// pre load images to improve responsiveness
+var images =[
+  './images/clinton1.png',
+'./images/trump3.png',
+'./images/femalemexican.jpg',
+'./images/MaleMexican1.png',
+'./images/sun.gif',
+'./images/moon.gif'
+];
+for (var i = 0; i < images.length; ++i) {
+    console.log("images preloaded");
+    var img = new Image();  //creates a new HTMLImageElement equivalent to document.createElement('img');
+     img.src = images[i];
+     console.log(images[i]);
+ }
+
 // Turn checker - if one token is selected, the other token must be played next
 var turnCheck = function() {
   count++;
@@ -98,8 +114,8 @@ $("#reset").click(function() {
 
 
 // Disable all buttons on win
-var winDisable = function (){
-  for (i=1; i<=9; i++){
+var winDisable = function() {
+  for (i = 1; i <= 9; i++) {
     var elementPrefixTwo = ("cell" + i);
     document.getElementById(elementPrefixTwo).disabled = true;
   }
@@ -110,14 +126,14 @@ var winDisable = function (){
 //   var audioA = document.getElementById("music");
 //   audioA.muted = !audioA.muted;
 // };
-$("#soundButton").click(function(){
+$("#soundButton").click(function() {
   var audioNoise = document.getElementById("music");
   audioNoise.muted = !audioNoise.muted;
   $(this).find('i').toggleClass('fa fa-volume-up fa fa-volume-off');
 });
 
 // Reset Score functionality
-$("#resetScore").click(function(){
+$("#resetScore").click(function() {
   $("#score-one").html(null);
   $("#score-two").html(null);
   $("#message").text(null);
@@ -156,117 +172,52 @@ for (var j = 1; j <= 9; j++) {
 
 
 var gameCheck = function() {
-  //check ROWS
-  if ((board.p1 !== null && board.p1 === board.p2 && board.p2 === board.p3)||(board.p4 !== null && board.p4 === board.p5 && board.p5 === board.p6)||(board.p7 !== null && board.p7 === board.p8 && board.p8 === board.p9))
-   {
-    displayMessage();
-    rowMessage();
-    winDisable();
-    //if ((board.p1 === startToken)||(board.p4 === startToken)||(board.p7 === startToken))
-    if(count % 2 !== 0)
-     {
-      startPlayer++;
-      startPlayerScore();
-    } else {
-      secondPlayer++;
-      secondPlayerScore();
-    }
-  }
-  // check COLUMNS
-  else if ((board.p1 !== null && board.p1 === board.p4 && board.p4 === board.p7)||(board.p2 !== null && board.p2 === board.p5 && board.p5 === board.p8)||(board.p3 !== null && board.p3 === board.p6 && board.p6 === board.p9)) {
-    displayMessage();
-    columnMessage();
+  //check ROWS for a win
+  if ((board.p1 !== null && board.p1 === board.p2 && board.p2 === board.p3) || (board.p4 !== null && board.p4 === board.p5 && board.p5 === board.p6) || (board.p7 !== null && board.p7 === board.p8 && board.p8 === board.p9)) {
+    $("#message").text("Winner - three in a row!");
+    $("#winningCheer").get(0).play(); //same as document.getElementById('winningCheer').play();
     winDisable();
     if (count % 2 !== 0) {
       startPlayer++;
-      startPlayerScore();
+      $("#score-one").html(startPlayer);
     } else {
       secondPlayer++;
-      secondPlayerScore();
+      $("#score-two").html(secondPlayer);
     }
   }
-  // CHECK DIAGONALS
-  else if ((board.p1 !== null & board.p1 === board.p5 && board.p5 === board.p9)||(board.p3 !== null & board.p3 === board.p5 && board.p5 === board.p7)) {
-    displayMessage();
-    diagonalMessage();
+  // check COLUMNS for a win
+  else if ((board.p1 !== null && board.p1 === board.p4 && board.p4 === board.p7) || (board.p2 !== null && board.p2 === board.p5 && board.p5 === board.p8) || (board.p3 !== null && board.p3 === board.p6 && board.p6 === board.p9)) {
+    $("#message").text("Winner - three in a column!");
+    $("#winningCheer").get(0).play();
     winDisable();
     if (count % 2 !== 0) {
       startPlayer++;
-      startPlayerScore();
+      $("#score-one").html(startPlayer);
     } else {
       secondPlayer++;
-      secondPlayerScore();
+      $("#score-two").html(secondPlayer);
+    }
+  }
+  // CHECK DIAGONALS for a win
+  else if ((board.p1 !== null & board.p1 === board.p5 && board.p5 === board.p9) || (board.p3 !== null & board.p3 === board.p5 && board.p5 === board.p7)) {
+    $("#message").text("Winner - three diagonally!");
+    $("#winningCheer").get(0).play();
+    winDisable();
+    if (count % 2 !== 0) {
+      startPlayer++;
+      $("#score-one").html(startPlayer);
+    } else {
+      secondPlayer++;
+      $("#score-two").html(secondPlayer);
     }
   }
   //CHECK DRAW OR CONTINUE
   else if (count === 9) {
-    displayMessage();
-    drawMessage();
+    $("#message").text("No glory but a hard earned draw!");
+
   } else {
     console.log("game is still on");
   }
-};
-
-
-var s = 0;
-var message;
-
-
-displayMessage = function(){
-  if((board.p1 !== null && board.p1 === board.p2 && board.p2 === board.p3)||(board.p4 !== null && board.p4 === board.p5 && board.p5 === board.p6)||(board.p7 !== null && board.p7 === board.p8 && board.p8 === board.p9)){
-    message = "Winner - three in a row!";
-  } else if ((board.p1 !== null && board.p1 === board.p4 && board.p4 === board.p7)||(board.p2 !== null && board.p2 === board.p5 && board.p5 === board.p8)||(board.p3 !== null && board.p3 === board.p6 && board.p6 === board.p9)) {
-    message = "Winner - three in a column!";
-  } else if ((board.p1 !== null & board.p1 === board.p5 && board.p5 === board.p9)||(board.p3 !== null & board.p3 === board.p5 && board.p5 === board.p7)) {
-    message = "Winner - three diagonally!";
-  }
-  else {
-    message = null;
-  }
-  $("#message").text(message);
-};
-
-
-// MESSAGES FOR ROW WIN, COLUMN WIN, DIAGONAL WIN OR DRAW
-rowMessage = function() {
-  var createRowMessage = document.createElement("p1"); // Create a <p> node
-  var textRowMessage = document.createTextNode("Winner - three in a row!"); // Create a text node
-  createRowMessage.appendChild(textRowMessage); // Append the text to <p>
-  document.body.appendChild(createRowMessage);
-  document.getElementById('winningCheer').play();
-};
-
-columnMessage = function() {
-  var createColumnMessage = document.createElement("p1"); // Create a <p> node
-  var textColumnMessage = document.createTextNode("Winner - three in a column!"); // Create a text node
-  createColumnMessage.appendChild(textColumnMessage); // Append the text to <p>
-  document.body.appendChild(createColumnMessage);
-  document.getElementById('winningCheer').play();
-};
-
-diagonalMessage = function() {
-  var createDiagonalMessage = document.createElement("p1"); // Create a <p> node
-  var textDiagonalMessage = document.createTextNode("Winner - three diagonally!"); // Create a text node
-  createDiagonalMessage.appendChild(textDiagonalMessage); // Append the text to <p>
-  document.body.appendChild(createDiagonalMessage);
-  document.getElementById('winningCheer').play();
-};
-
-drawMessage = function() {
-  var createDrawMessage = document.createElement("p1"); // Create a <p> node
-  var textDrawMessage = document.createTextNode("No glory but a hard earned draw!"); // Create a text node
-  createDrawMessage.appendChild(textDrawMessage); // Append the text to <p>
-  document.body.appendChild(createDrawMessage);
-};
-
-startPlayerScore = function() {
-  var b = document.querySelector("#score-one");
-  b.innerHTML = startPlayer;
-};
-
-secondPlayerScore = function() {
-  var c = document.querySelector("#score-two");
-  c.innerHTML = secondPlayer;
 };
 
 // ARTIFICIAL INTELLIGENCE LOGIC - COMPUTER SELECTS ON BUTTON CLICK - ONLY WORKS FOR SECOND PLAYER

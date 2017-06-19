@@ -80,7 +80,10 @@ var images =[
 './images/femalemexican.jpg',
 './images/MaleMexican1.png',
 './images/sun.gif',
-'./images/moon.gif'
+'./images/moon.gif',
+'./images/americanflag.gif',
+'./images/Day of the Dead.jpg',
+'./images/niceimage.gif'
 ];
 for (var i = 0; i < images.length; ++i) {
     console.log("images preloaded");
